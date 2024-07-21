@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:uhv_app/screens/homePage.dart';
 import 'package:uhv_app/screens/infoPage.dart';
@@ -38,7 +37,9 @@ class _AppBottomState extends State<AppBottom> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: AppBarColor,
-        title: Text("UHV App",style: TextStyle(color:AppBarTextColor),
+        title: const Text(
+          "UHV",
+          style: TextStyle(color: AppBarTextColor),
         ),
       ),
       body: Center(child: _widgetsOptions[selectedPageIndex]),

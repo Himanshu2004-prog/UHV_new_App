@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:uhv_app/app_Authentication/login.dart';
-import 'package:uhv_app/screens/bottomBar.dart';
-import 'package:uhv_app/screens/homePage.dart';
-
 
 void main() {
   runApp(const MyApp());
@@ -16,13 +13,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'UHV',
       theme: ThemeData(
-
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:LoginPage(),
+      home: LoginPage(),
     );
   }
 }
