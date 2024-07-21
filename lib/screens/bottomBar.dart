@@ -37,7 +37,9 @@ class _AppBottomState extends State<AppBottom> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("UHV App",style: TextStyle(color:AppBarTextColor),),
+        backgroundColor: AppBarColor,
+        title: Text("UHV App",style: TextStyle(color:AppBarTextColor),
+        ),
       ),
       body: Center(child: _widgetsOptions[selectedPageIndex]),
       bottomNavigationBar: BottomNavigationBar(
