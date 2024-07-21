@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:uhv_app/screens/homePage.dart';
 import 'package:uhv_app/screens/infoPage.dart';
@@ -14,19 +15,24 @@ class AppBottom extends StatefulWidget {
 
 class _AppBottomState extends State<AppBottom> {
   int selectedPageIndex = 0;
+  final FirebaseAnalytics analytics = FirebaseAnalytics.instance;
   late List<Widget> _widgetsOptions;
+  static List pageNames = ["HomePage", "InfoPage", "ProfilePage"];
 
   @override
   void initState() {
+    analytics.setAnalyticsCollectionEnabled(true);
     super.initState();
     _widgetsOptions = <Widget>[
-      const homePage(),
+      homePage(analytics: analytics),
       const infoPage(),
       const profilePage(),
     ];
   }
 
   void onItemTapped(int index) {
+    analytics.logEvent(
+        name: "pages_tracked", parameters: {"page_name": pageNames[index]});
     setState(() {
       selectedPageIndex = index;
     });
