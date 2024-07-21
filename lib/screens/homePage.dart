@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:uhv_app/ecoResolve/homePage_ER.dart';
+import 'package:uhv_app/ecoResolve1/homePage_ER.dart';
 import 'package:uhv_app/heartistry/homePage_HT.dart';
 import 'package:uhv_app/moralMentor/homePage_mm.dart';
 import 'package:uhv_app/prepPal/homePag_PP.dart';
 import 'package:uhv_app/rightsQuest/homePage_RQ.dart';
+
+import '../ecoResolve2/homepage_ER2.dart';
 class homePage extends StatelessWidget {
   const homePage({super.key});
 
@@ -60,7 +62,17 @@ class homePage extends StatelessWidget {
                 MaterialPageRoute(builder: (context) => homePage_ER()),
               );},
             child: Container(
-              child: Text("Eco Resolve"),
+              child: Text("Eco Resolve 1"),
+
+            ),
+          ), InkWell(
+            onTap: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => homePage_ER2()),
+              );},
+            child: Container(
+              child: Text("Eco Resolve 2"),
 
             ),
           ),
